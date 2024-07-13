@@ -1,7 +1,7 @@
 program ASCII_Dance;
 
 uses
-  Crt, Dos;  // Crt for clearing screen, Dos for delay function
+  Crt, Dos;
 
 const
   Frames: array[1..4] of string = (
@@ -22,22 +22,17 @@ end;
 
 begin
   FrameIndex := 1;
-  
-  // Infinite loop for continuous animation
+
   while True do
   begin
-    // Clear the screen
     ClrScr;
     
-    // Display the current frame
     DisplayFrame(Frames[FrameIndex]);
     
-    // Delay to control animation speed (in milliseconds)
-    Delay(500);  // Adjust speed by changing delay value
+    Delay(500); 
     
-    // Move to the next frame
     Inc(FrameIndex);
     if FrameIndex > FrameCount then
-      FrameIndex := 1;  // Loop back to the first frame
+      FrameIndex := 1;
   end;
 end.
